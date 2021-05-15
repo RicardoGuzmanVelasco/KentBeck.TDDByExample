@@ -6,6 +6,13 @@ namespace Domain.Tests
     public class CurrencyTests
     {
         [Test]
+        public void Currency_Codes()
+        {
+            Money.Dollar(1).Currency.Should().Be("USD");
+            Money.Franc(1).Currency.Should().Be("CHF");
+        }
+        
+        [Test]
         public void Franc_Multiplication()
         {
             var sut = Money.Franc(5);
