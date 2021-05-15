@@ -4,6 +4,6 @@ namespace Domain
     {
         public Dollar(int amount, string currency) : base(amount, currency) {}
 
-        public override Money Times(int multiplier) => new Dollar(amount * multiplier, Currency);
+        public Money Times(int multiplier) => new Money(amount * multiplier, Currency);
     }
 }
