@@ -10,9 +10,11 @@ namespace Domain.Tests
         {
             var sut = new Dollar(5);
 
-            sut.Times(2);
-
-            sut.Amount.Should().Be(10);
+            var result1 = sut.Times(2);
+            var result2 = sut.Times(3);
+            
+            result1.Amount.Should().Be(10);
+            result2.Amount.Should().Be(15);
         }
     }
 }
