@@ -1,19 +1,21 @@
 @startuml
 class Dollar <<ValueObject>>
 {
-    +Amount : int
     Dollar(int amount)
     Times(int amount) : Dollar
 }
 
 class Franc <<ValueObject>>
 {
-    +Amount : int
     Dollar(int amount)
-    Times(int amount) : Dollar
+    Times(int amount) : Franc
 }
 
-note "Duplication" as N
-N .. Dollar
-N .. Franc
+class Money <<ValueObject>>
+{
+    -Amount : int
+    #Money(int amount)
+}
+Dollar --|> Money
+Franc --|> Money
 @enduml
