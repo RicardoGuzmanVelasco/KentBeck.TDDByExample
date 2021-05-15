@@ -25,5 +25,14 @@ namespace Domain.Tests
 
             sut1.Should().Be(sut2);
         }
+        
+        [Test]
+        public void Dollar_Unequality()
+        {
+            var sut1 = new Dollar(5);
+            var sut2 = new Dollar(6);
+
+            sut1.Should().NotBe(sut2);
+        }
     }
 }
