@@ -1,5 +1,5 @@
 @startuml
-class Dollar
+class Dollar <<ValueObject>>
 {
     +Amount : int
     Dollar(int amount)
