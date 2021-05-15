@@ -16,5 +16,14 @@ namespace Domain.Tests
             result1.Amount.Should().Be(10);
             result2.Amount.Should().Be(15);
         }
+
+        [Test]
+        public void Dollar_Equality()
+        {
+            var sut1 = new Dollar(5);
+            var sut2 = new Dollar(5);
+
+            sut1.Should().Be(sut2);
+        }
     }
 }
