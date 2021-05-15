@@ -38,7 +38,7 @@ namespace Domain.Tests
         }
         
         [Test]
-        public void Dollar_Unequality()
+        public void Dollar_Inequality()
         {
             var sut = new Dollar(5);
 
@@ -54,11 +54,20 @@ namespace Domain.Tests
         }
         
         [Test]
-        public void Franc_Unequality()
+        public void Franc_Inequality()
         {
             var sut = new Franc(5);
 
             sut.Should().NotBe(new Franc(6));
+        }
+
+        [Test]
+        public void Dollar_Franc_Inequality()
+        {
+            Money sut1 = new Dollar(5);
+            Money sut2 = new Franc(5);
+
+            sut1.Should().NotBe(sut2);
         }
     }
 }
