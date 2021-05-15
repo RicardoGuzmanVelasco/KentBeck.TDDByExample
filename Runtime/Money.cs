@@ -12,7 +12,7 @@ namespace Domain
             Currency = currency;
         }
 
-        public Money Times(int multiplier) => null;
+        public Money Times(int multiplier) => new Money(amount * multiplier, Currency);
         
         public static Dollar Dollar(int amount) => new Dollar(amount, "USD");
         public static Franc Franc(int amount) => new Franc(amount, "CHF");
