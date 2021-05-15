@@ -14,8 +14,8 @@ namespace Domain
 
         public Money Times(int multiplier) => new Money(amount * multiplier, Currency);
         
-        public static Dollar Dollar(int amount) => new Dollar(amount, "USD");
-        public static Franc Franc(int amount) => new Franc(amount, "CHF");
+        public static Money Dollar(int amount) => new Money(amount, "USD");
+        public static Money Franc(int amount) => new Money(amount, "CHF");
         
         public override bool Equals(object o)
         {
