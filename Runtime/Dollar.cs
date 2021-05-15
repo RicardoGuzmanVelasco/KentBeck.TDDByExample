@@ -2,7 +2,7 @@ namespace Domain
 {
     public class Dollar
     {
-        public int Amount { get; } 
+        int Amount { get; } 
         
         public Dollar(int amount) => Amount = amount;
 

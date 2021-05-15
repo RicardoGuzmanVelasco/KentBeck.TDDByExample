@@ -13,26 +13,24 @@ namespace Domain.Tests
             var result1 = sut.Times(2);
             var result2 = sut.Times(3);
             
-            result1.Amount.Should().Be(10);
-            result2.Amount.Should().Be(15);
+            result1.Should().Be(new Dollar(10));
+            result2.Should().Be(new Dollar(15));
         }
-
+        
         [Test]
         public void Dollar_Equality()
         {
-            var sut1 = new Dollar(5);
-            var sut2 = new Dollar(5);
+            var sut = new Dollar(5);
 
-            sut1.Should().Be(sut2);
+            sut.Should().Be(new Dollar(5));
         }
         
         [Test]
         public void Dollar_Unequality()
         {
-            var sut1 = new Dollar(5);
-            var sut2 = new Dollar(6);
+            var sut = new Dollar(5);
 
-            sut1.Should().NotBe(sut2);
+            sut.Should().NotBe(new Dollar(6));
         }
     }
 }
