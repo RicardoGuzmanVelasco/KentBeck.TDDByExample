@@ -25,24 +25,24 @@ namespace Domain.Tests
             var result1 = sut.Times(2);
             var result2 = sut.Times(3);
             
-            result1.Should().Be(new Dollar(10));
-            result2.Should().Be(new Dollar(15));
+            result1.Should().Be(Money.Dollar(10));
+            result2.Should().Be(Money.Dollar(15));
         }
         
         [Test]
         public void Dollar_Equality()
         {
-            var sut = new Dollar(5);
+            var sut = Money.Dollar(5);
 
-            sut.Should().Be(new Dollar(5));
+            sut.Should().Be(Money.Dollar(5));
         }
         
         [Test]
         public void Dollar_Inequality()
         {
-            var sut = new Dollar(5);
+            var sut = Money.Dollar(5);
 
-            sut.Should().NotBe(new Dollar(6));
+            sut.Should().NotBe(Money.Dollar(6));
         }
         
         [Test]
@@ -64,7 +64,7 @@ namespace Domain.Tests
         [Test]
         public void Dollar_Franc_Inequality()
         {
-            Money sut1 = new Dollar(5);
+            Money sut1 = Money.Dollar(5);
             Money sut2 = new Franc(5);
 
             sut1.Should().NotBe(sut2);

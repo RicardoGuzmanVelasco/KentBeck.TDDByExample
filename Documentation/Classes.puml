@@ -2,22 +2,19 @@
 class Dollar <<ValueObject>>
 {
     Dollar(int amount)
-    Times(int amount) : Dollar
 }
 
 class Franc <<ValueObject>>
 {
     Franc(int amount)
-    Times(int amount) : Franc
 }
 
 class Money <<ValueObject>>
 {
     -Amount : int
     #Money(int amount)
+    Times(int amount) : Money
 }
 Dollar --|> Money
 Franc --|> Money
-
-note left of Money : Uses\nsmelly\nreflection
 @enduml
