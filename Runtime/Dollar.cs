@@ -1,10 +1,8 @@
 namespace Domain
 {
-    public class Dollar
+    public class Dollar : Money
     {
-        readonly int amount;
-
-        public Dollar(int amount) => this.amount = amount;
+        public Dollar(int amount) : base(amount) { }
 
         public Dollar Times(int multiplier) => new Dollar(amount * multiplier);
 
