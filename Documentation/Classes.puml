@@ -7,7 +7,7 @@ class Dollar <<ValueObject>>
 
 class Franc <<ValueObject>>
 {
-    Dollar(int amount)
+    Franc(int amount)
     Times(int amount) : Franc
 }
 
