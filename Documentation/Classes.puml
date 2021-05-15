@@ -1,19 +1,19 @@
 @startuml
 class Dollar <<ValueObject>>
 {
-    Dollar(int amount)
+    Dollar(int amount, string currency)
 }
 
 class Franc <<ValueObject>>
 {
-    Franc(int amount)
+    Franc(int amount, string currency)
 }
 
 class Money <<ValueObject>>
 {
     -Amount : int
     +Currency : string
-    #Money(int amount)
+    #Money(int amount, string currency)
     Times(int amount) : Money
     
     {static} Dollar(int amount) : Money
