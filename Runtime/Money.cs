@@ -21,7 +21,7 @@ namespace Domain
 
         public Money Plus(Money other)
         {
-            return new Money(0, "");
+            return new Money(amount + other.amount, Currency);
         }
         
         public override bool Equals(object o)
