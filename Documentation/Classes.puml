@@ -3,6 +3,6 @@ class Dollar
 {
     +Amount : int
     Dollar(int amount)
-    Times(int amount) : void
+    Times(int amount) : Dollar
 }
 @enduml
