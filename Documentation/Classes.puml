@@ -1,0 +1,8 @@
+@startuml
+class Dollar
+{
+    +Amount : int
+    Dollar(int amount)
+    Times(int amount) : void
+}
+@enduml
