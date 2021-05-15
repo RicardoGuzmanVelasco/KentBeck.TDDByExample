@@ -12,6 +12,7 @@ class Franc <<ValueObject>>
 class Money <<ValueObject>>
 {
     -Amount : int
+    +Currency : string
     #Money(int amount)
     Times(int amount) : Money
     
