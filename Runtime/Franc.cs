@@ -1,13 +1,11 @@
 namespace Domain
 {
-    public class Franc
+    public class Franc : Money
     {
         int Amount { get; }
         
-        public Franc(int amount) => Amount = amount;
+        public Franc(int amount) : base(amount) { }
 
         public Franc Times(int multiplier) => new Franc(Amount * multiplier);
-
-        public override bool Equals(object o) => o is Franc other && Amount == other.Amount;
     }
 }

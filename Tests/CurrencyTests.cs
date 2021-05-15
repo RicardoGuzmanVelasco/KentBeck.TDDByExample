@@ -44,5 +44,21 @@ namespace Domain.Tests
 
             sut.Should().NotBe(new Dollar(6));
         }
+        
+        [Test]
+        public void Franc_Equality()
+        {
+            var sut = new Franc(5);
+
+            sut.Should().Be(new Franc(5));
+        }
+        
+        [Test]
+        public void Franc_Unequality()
+        {
+            var sut = new Franc(5);
+
+            sut.Should().NotBe(new Franc(6));
+        }
     }
 }
