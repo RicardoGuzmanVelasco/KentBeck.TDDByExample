@@ -15,7 +15,7 @@ namespace Domain.Tests
         [Test]
         public void Franc_Multiplication()
         {
-            var sut = Money.Franc(5);
+            Franc sut = Money.Franc(5);
 
             var result1 = sut.Times(2);
             var result2 = sut.Times(3);
@@ -27,7 +27,7 @@ namespace Domain.Tests
         [Test]
         public void Dollar_Multiplication()
         {
-            Money sut = Money.Dollar(5);
+            Dollar sut = Money.Dollar(5);
 
             var result1 = sut.Times(2);
             var result2 = sut.Times(3);

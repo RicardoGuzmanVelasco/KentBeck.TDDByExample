@@ -14,14 +14,16 @@ namespace Domain
 
         public Money Times(int multiplier) => null;
         
-        public static Money Dollar(int amount) => new Dollar(amount, "USD");
-        public static Money Franc(int amount) => new Franc(amount, "CHF");
+        public static Dollar Dollar(int amount) => new Dollar(amount, "USD");
+        public static Franc Franc(int amount) => new Franc(amount, "CHF");
         
         public override bool Equals(object o)
         {
             return o is Money other &&
-                   GetType() == other.GetType() &&
+                   Currency == other.Currency &&
                    amount == other.amount;
         }
+
+        public override string ToString() => $"{nameof(amount)}: {amount}, {nameof(Currency)}: {Currency}";
     }
 }
