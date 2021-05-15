@@ -13,7 +13,7 @@ namespace Domain.Tests
             var result1 = sut.Times(2);
             var result2 = sut.Times(3);
             
-            result1.Should().Be(Money.Franc(5));
+            result1.Should().Be(Money.Franc(10));
             result2.Should().Be(Money.Franc(15));
         }
         
