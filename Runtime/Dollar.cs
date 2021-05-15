@@ -8,9 +8,6 @@ namespace Domain
 
         public Dollar Times(int multiplier) => new Dollar(Amount * multiplier);
 
-        public override bool Equals(object obj)
-        {
-            return obj is Dollar o && Amount == o.Amount;
-        }
+        public override bool Equals(object o) => o is Dollar other && Amount == other.Amount;
     }
 }
