@@ -2,12 +2,12 @@ namespace Domain
 {
     public class Dollar
     {
-        int Amount { get; } 
-        
-        public Dollar(int amount) => Amount = amount;
+        readonly int amount;
 
-        public Dollar Times(int multiplier) => new Dollar(Amount * multiplier);
+        public Dollar(int amount) => this.amount = amount;
 
-        public override bool Equals(object o) => o is Dollar other && Amount == other.Amount;
+        public Dollar Times(int multiplier) => new Dollar(amount * multiplier);
+
+        public override bool Equals(object o) => o is Dollar other && amount == other.amount;
     }
 }
