@@ -20,7 +20,7 @@ namespace Domain.Tests
         [Test]
         public void Dollar_Multiplication()
         {
-            var sut = Money.Dollar(5);
+            Money sut = Money.Dollar(5);
 
             var result1 = sut.Times(2);
             var result2 = sut.Times(3);

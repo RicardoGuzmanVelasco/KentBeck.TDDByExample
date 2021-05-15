@@ -5,13 +5,16 @@ namespace Domain
         protected readonly int amount;
 
         protected Money(int amount) => this.amount = amount;
+
+        public abstract Money Times(int multiplier);
+        
+        public static Money Dollar(int amount) => new Dollar(amount);
+        
         public override bool Equals(object o)
         {
             return o is Money other &&
                    GetType() == other.GetType() &&
                    amount == other.amount;
         }
-
-        public static Dollar Dollar(int amount) => new Dollar(amount);
     }
 }
