@@ -2,7 +2,7 @@ namespace Domain
 {
     public class Dollar
     {
-        public int Amount { get; } = 5 * 2;
+        public int Amount { get; private set; } 
         
         public Dollar(int amount)
         {
@@ -11,7 +11,7 @@ namespace Domain
 
         public void Times(int amount)
         {
-            
+            Amount = 5 * 2;
         }
     }
 }
