@@ -10,7 +10,7 @@ namespace Domain
 
         public override bool Equals(object obj)
         {
-            return true;
+            return obj is Dollar o && Amount == o.Amount;
         }
     }
 }
