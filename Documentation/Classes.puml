@@ -1,13 +1,4 @@
 @startuml
-class Dollar <<ValueObject>>
-{
-    Dollar(int amount, string currency)
-}
-
-class Franc <<ValueObject>>
-{
-    Franc(int amount, string currency)
-}
 
 class Money <<ValueObject>>
 {
@@ -19,8 +10,4 @@ class Money <<ValueObject>>
     {static} Dollar(int amount) : Money
     {static} Franc(int amount) : Money
 }
-note bottom of Money : "Not abstract anymore"
-
-Dollar --|> Money
-Franc --|> Money
 @enduml
