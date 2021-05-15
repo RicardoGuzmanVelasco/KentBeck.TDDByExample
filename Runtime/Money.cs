@@ -10,8 +10,8 @@ namespace Domain
 
         public abstract Money Times(int multiplier);
         
-        public static Money Dollar(int amount) => new Dollar(amount);
-        public static Money Franc(int amount) => new Franc(amount);
+        public static Money Dollar(int amount) => new Dollar(amount, null);
+        public static Money Franc(int amount) => new Franc(amount, null);
         
         public override bool Equals(object o)
         {
