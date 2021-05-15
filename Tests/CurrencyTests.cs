@@ -8,13 +8,13 @@ namespace Domain.Tests
         [Test]
         public void Franc_Multiplication()
         {
-            var sut = new Franc(5);
+            var sut = Money.Franc(5);
 
             var result1 = sut.Times(2);
             var result2 = sut.Times(3);
             
-            result1.Should().Be(new Franc(10));
-            result2.Should().Be(new Franc(15));
+            result1.Should().Be(Money.Franc(5));
+            result2.Should().Be(Money.Franc(15));
         }
         
         [Test]
@@ -48,24 +48,24 @@ namespace Domain.Tests
         [Test]
         public void Franc_Equality()
         {
-            var sut = new Franc(5);
+            var sut = Money.Franc(5);
 
-            sut.Should().Be(new Franc(5));
+            sut.Should().Be(Money.Franc(5));
         }
         
         [Test]
         public void Franc_Inequality()
         {
-            var sut = new Franc(5);
+            var sut = Money.Franc(5);
 
-            sut.Should().NotBe(new Franc(6));
+            sut.Should().NotBe(Money.Franc(6));
         }
 
         [Test]
         public void Dollar_Franc_Inequality()
         {
             Money sut1 = Money.Dollar(5);
-            Money sut2 = new Franc(5);
+            Money sut2 = Money.Franc(5);
 
             sut1.Should().NotBe(sut2);
         }
