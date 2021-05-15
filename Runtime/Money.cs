@@ -3,7 +3,8 @@ namespace Domain
     public abstract class Money
     {
         protected readonly int amount;
-        public abstract string Currency { get; }
+        
+        public string Currency { get; protected set; }
 
         protected Money(int amount) => this.amount = amount;
 

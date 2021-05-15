@@ -2,9 +2,8 @@ namespace Domain
 {
     public class Dollar : Money
     {
-        public override string Currency => null;
 
-        public Dollar(int amount) : base(amount) { }
+        public Dollar(int amount) : base(amount) => Currency = "USD";
 
         public override Money Times(int multiplier) => new Dollar(amount * multiplier);
     }

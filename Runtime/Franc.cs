@@ -2,9 +2,7 @@ namespace Domain
 {
     public class Franc : Money
     {
-        public override string Currency => null;
-
-        public Franc(int amount) : base(amount)  { }
+        public Franc(int amount) : base(amount) => Currency = "CHF";
 
         public override Money Times(int multiplier) => new Franc(amount * multiplier);
     }
