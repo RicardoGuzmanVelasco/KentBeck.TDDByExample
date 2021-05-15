@@ -5,4 +5,15 @@ class Dollar <<ValueObject>>
     Dollar(int amount)
     Times(int amount) : Dollar
 }
+
+class Franc <<ValueObject>>
+{
+    +Amount : int
+    Dollar(int amount)
+    Times(int amount) : Dollar
+}
+
+note "Duplication" as N
+N .. Dollar
+N .. Franc
 @enduml
