@@ -6,12 +6,12 @@ namespace Domain
         
         public Dollar(int amount)
         {
-            
+            Amount = amount;
         }
 
         public void Times(int amount)
         {
-            Amount = 5 * 2;
+            Amount *= 2;
         }
     }
 }
