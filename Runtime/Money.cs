@@ -1,5 +1,3 @@
-using System;
-
 namespace Domain
 {
     public abstract class Money
@@ -14,6 +12,6 @@ namespace Domain
                    amount == other.amount;
         }
 
-        public static Dollar Dollar(int amount) => null;
+        public static Dollar Dollar(int amount) => new Dollar(amount);
     }
 }
