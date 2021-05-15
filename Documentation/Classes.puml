@@ -18,4 +18,6 @@ class Money <<ValueObject>>
 }
 Dollar --|> Money
 Franc --|> Money
+
+note left of Money : Uses\nsmelly\nreflection
 @enduml
