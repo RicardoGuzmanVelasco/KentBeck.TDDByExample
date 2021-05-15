@@ -14,6 +14,9 @@ class Money <<ValueObject>>
     -Amount : int
     #Money(int amount)
     Times(int amount) : Money
+    
+    {static} Dollar(int amount) : Money
+    {static} Franc(int amount) : Money
 }
 Dollar --|> Money
 Franc --|> Money
