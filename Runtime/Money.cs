@@ -1,3 +1,5 @@
+using System;
+
 namespace Domain
 {
     public abstract class Money
@@ -11,5 +13,7 @@ namespace Domain
                    GetType() == other.GetType() &&
                    amount == other.amount;
         }
+
+        public static Dollar Dollar(int amount) => null;
     }
 }
