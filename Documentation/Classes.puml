@@ -19,6 +19,8 @@ class Money <<ValueObject>>
     {static} Dollar(int amount) : Money
     {static} Franc(int amount) : Money
 }
+note bottom of Money : "Not abstract anymore"
+
 Dollar --|> Money
 Franc --|> Money
 @enduml
