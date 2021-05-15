@@ -6,6 +6,16 @@ namespace Domain.Tests
     public class CurrencyTests
     {
         [Test]
+        public void Currency_SimpleAddition()
+        {
+            var sut = Money.Dollar(5);
+
+            var resultSum = sut.Plus(sut);
+
+            resultSum.Should().Be(Money.Dollar(10));
+        }
+        
+        [Test]
         public void Currency_Codes()
         {
             Money.Dollar(1).Currency.Should().Be("USD");
