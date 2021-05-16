@@ -20,6 +20,7 @@ namespace Domain
         public static Money Dollar(int amount) => new Money(amount, "USD");
         public static Money Franc(int amount) => new Money(amount, "CHF");
 
+        public Money Reduce(string to) => this;
 
         public override bool Equals(object o)
         {
