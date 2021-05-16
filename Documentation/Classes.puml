@@ -1,6 +1,9 @@
 @startuml
 
-interface MoneyExpression 
+interface MoneyExpression
+{
+    Reduce(string to) : Money
+} 
 
 class Money <<ValueObject>>
 {
@@ -22,8 +25,6 @@ class SumExpression
 {
     +Augend : Money
     +Addend : Money
-    
-    +Reduce(string to) : Money
 }
 SumExpression --|> MoneyExpression
 
@@ -33,5 +34,4 @@ class Bank
 }
 Bank --> MoneyExpression
 Bank --> Money
-note top of Bank : Ugly reflection
 @enduml
