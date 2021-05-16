@@ -4,7 +4,9 @@ namespace Domain
     {
         public Money Reduce(MoneyExpression source, string to)
         {
-            return Money.Dollar(10);
+            var sum = (SumExpression) source;
+            var amount = sum.Augend.Amount + sum.Addend.Amount;
+            return new Money(amount, to);
         }
     }
 }

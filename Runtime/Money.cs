@@ -4,17 +4,16 @@ namespace Domain
 {
     public class Money : MoneyExpression
     {
-        protected readonly int amount;
-        
+        public int Amount { get; }
         public string Currency { get; }
 
         public Money(int amount, string currency)
         {
-            this.amount = amount;
+            this.Amount = amount;
             Currency = currency;
         }
 
-        public Money Times(int multiplier) => new Money(amount * multiplier, Currency);
+        public Money Times(int multiplier) => new Money(Amount * multiplier, Currency);
         
         public SumExpression Plus(Money addend) => new SumExpression(this, addend);
         
@@ -26,9 +25,9 @@ namespace Domain
         {
             return o is Money other &&
                    Currency == other.Currency &&
-                   amount == other.amount;
+                   Amount == other.Amount;
         }
 
-        public override string ToString() => $"{nameof(amount)}: {amount}, {nameof(Currency)}: {Currency}";
+        public override string ToString() => $"{nameof(Amount)}: {Amount}, {nameof(Currency)}: {Currency}";
     }
 }
