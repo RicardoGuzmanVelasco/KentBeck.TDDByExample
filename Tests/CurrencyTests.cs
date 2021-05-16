@@ -29,7 +29,7 @@ namespace Domain.Tests
         }
         
         [Test]
-        public void Bank_Currency_Reduction()
+        public void Bank_MoneyExpression_Reduction()
         {
             var money = Money.Dollar(5);
             var sum = money.Plus(money);
@@ -38,6 +38,18 @@ namespace Domain.Tests
             var resultReduced = sut.Reduce(sum, "USD");
 
             resultReduced.Should().Be(Money.Dollar(10));
+        }
+
+        [Test]
+        public void Bank_Money_Reduction()
+        {
+            var money = Money.Dollar(1);
+            var sut = new Bank();
+
+            var result = sut.Reduce(money, "USD");
+
+            result.Should().Be(Money.Dollar(1));
+
         }
         
         [Test]

@@ -22,6 +22,8 @@ class SumExpression
 {
     +Augend : Money
     +Addend : Money
+    
+    +Reduce(string to) : Money
 }
 SumExpression --|> MoneyExpression
 
