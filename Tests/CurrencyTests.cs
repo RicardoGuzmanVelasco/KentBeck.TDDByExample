@@ -7,6 +7,17 @@ namespace Domain.Tests
     public class CurrencyTests
     {
         [Test]
+        public void Bank_Sum_Reduction()
+        {
+            var sum = new SumExpression(Money.Dollar(3), Money.Dollar(4));
+            var sut = new Bank();
+
+            var result = sut.Reduce(sum, "USD");
+
+            result.Should().Be(Money.Dollar(7));
+        }
+        
+        [Test]
         public void Plus_ReturnsASumExpression()
         {
             var sut = Money.Dollar(5);
@@ -18,7 +29,7 @@ namespace Domain.Tests
         }
         
         [Test]
-        public void Currency_Reduction()
+        public void Bank_Currency_Reduction()
         {
             var money = Money.Dollar(5);
             var sum = money.Plus(money);

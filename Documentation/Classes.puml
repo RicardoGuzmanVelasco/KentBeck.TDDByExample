@@ -10,13 +10,20 @@ class Money <<ValueObject>>
     #Money(int amount, string currency)
     
     Times(int amount) : Money
-    Plus(Money addend) : MoneyExpression
-    
+    Plus(Money addend) : SumExpression
     
     {static} Dollar(int amount) : Money
     {static} Franc(int amount) : Money
 }
 Money --|> MoneyExpression
+Money --> SumExpression
+
+class SumExpression
+{
+    +Augend : Money
+    +Addend : Money
+}
+SumExpression --|> MoneyExpression
 
 class Bank
 {

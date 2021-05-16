@@ -16,10 +16,11 @@ namespace Domain
 
         public Money Times(int multiplier) => new Money(amount * multiplier, Currency);
         
+        public SumExpression Plus(Money addend) => new SumExpression(this, addend);
+        
         public static Money Dollar(int amount) => new Money(amount, "USD");
         public static Money Franc(int amount) => new Money(amount, "CHF");
 
-        public SumExpression Plus(Money addend) => new SumExpression(this, addend);
 
         public override bool Equals(object o)
         {
