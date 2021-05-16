@@ -11,7 +11,7 @@ namespace Domain.Tests
         {
             var sut = Money.Dollar(5);
             
-            var sum = (SumExpression) sut.Plus(sut);
+            var sum = sut.Plus(sut);
 
             sum.Augend.Should().Be(Money.Dollar(5));
             sum.Addend.Should().Be(Money.Dollar(5));
@@ -27,16 +27,6 @@ namespace Domain.Tests
             var resultReduced = sut.Reduce(sum, "USD");
 
             resultReduced.Should().Be(Money.Dollar(10));
-        }
-        
-        [Test]
-        public void Currency_SimpleAddition()
-        {
-            var sut = Money.Dollar(5);
-
-            var resultSum = sut.Plus(sut);
-
-            resultSum.Should().Be(Money.Dollar(10));
         }
         
         [Test]
