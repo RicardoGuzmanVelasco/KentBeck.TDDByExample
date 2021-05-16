@@ -1,5 +1,3 @@
-using UnityEditor.UIElements;
-
 namespace Domain
 {
     public class Money : MoneyExpression
@@ -9,7 +7,7 @@ namespace Domain
 
         public Money(int amount, string currency)
         {
-            this.Amount = amount;
+            Amount = amount;
             Currency = currency;
         }
 
