@@ -33,4 +33,5 @@ class Bank
 }
 Bank --> MoneyExpression
 Bank --> Money
+note top of Bank : Ugly reflection
 @enduml
