@@ -7,6 +7,23 @@ namespace Domain.Tests
     public class CurrencyTests
     {
         [Test]
+        public void MixedCurrency_Addition()
+        {
+            //Arrange
+            var dollars = Money.Dollar(5);
+            var francs = Money.Franc(10);
+            
+            var sut = new Bank();
+            sut.AddRate(francs.Currency, dollars.Currency, 2);
+
+            //Act
+            var result = sut.Reduce(dollars.Plus(francs), dollars.Currency);
+
+            //Assert
+            result.Should().Be(Money.Dollar(10));
+        }
+        
+        [Test]
         public void Plus_ReturnsASumExpression()
         {
             var sut = Money.Dollar(5);
