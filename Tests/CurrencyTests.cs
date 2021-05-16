@@ -7,6 +7,16 @@ namespace Domain.Tests
     public class CurrencyTests
     {
         [Test]
+        public void Plus_SameCurrency_ReturnsMoney()
+        {
+            var sut = Money.Dollar(1);
+            
+            var resultSum = sut.Plus(sut);
+
+            resultSum.Should().BeOfType<Money>();
+        }
+        
+        [Test]
         public void Sum_Times()
         {
             //Arrange
