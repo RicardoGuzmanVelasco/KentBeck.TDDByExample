@@ -1,3 +1,4 @@
+using System.Linq.Expressions;
 using FluentAssertions;
 using NUnit.Framework;
 
@@ -6,10 +7,28 @@ namespace Domain.Tests
     public class CurrencyTests
     {
         [Test]
+        public void Sum_Plus()
+        {
+            //Arrange
+            var dollars = Money.Dollar(5);
+            var francs = Money.Franc(10);
+
+            var sut = new Bank();
+            sut.AddRate("CHF", "USD", 2);
+            
+            //Act
+            var sumPlus = new SumExpression(dollars, francs).Plus(dollars);
+            var result = sut.Reduce(sumPlus, "USD");
+            
+            //Assert
+            result.Should().Be(Money.Dollar(15));
+        }
+        
+        [Test]
         public void MixedCurrency_Addition()
         {
             //Arrange
-            MoneyExpression dollars = Money.Dollar(5);
+            var dollars = Money.Dollar(5);
             var francs = Money.Franc(10);
             
             var sut = new Bank();
