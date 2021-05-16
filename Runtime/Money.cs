@@ -20,7 +20,7 @@ namespace Domain
         public static Money Dollar(int amount) => new Money(amount, "USD");
         public static Money Franc(int amount) => new Money(amount, "CHF");
 
-        public Money Reduce(string to)
+        public Money Reduce(Bank bank, string to)
         {
             var rate = 1;
             if(Currency is "CHF" && to is "USD")

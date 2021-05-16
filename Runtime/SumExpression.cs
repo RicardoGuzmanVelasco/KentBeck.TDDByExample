@@ -11,7 +11,7 @@ namespace Domain
             Addend = addend;
         }
 
-        public Money Reduce(string to)
+        public Money Reduce(Bank bank, string to)
         {
             var amount = Augend.Amount + Addend.Amount;
             return new Money(amount, to);
