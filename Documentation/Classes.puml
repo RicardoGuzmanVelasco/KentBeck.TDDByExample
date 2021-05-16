@@ -1,13 +1,27 @@
 @startuml
 
+interface MoneyExpression 
+
 class Money <<ValueObject>>
 {
     -Amount : int
     +Currency : string
+    
     #Money(int amount, string currency)
+    
     Times(int amount) : Money
+    Plus(Money addend) : MoneyExpression
+    
     
     {static} Dollar(int amount) : Money
     {static} Franc(int amount) : Money
 }
+Money --|> MoneyExpression
+
+class Bank
+{
+    Reduce(MoneyExpression source, string to) : Money
+}
+Bank --> MoneyExpression
+Bank --> Money
 @enduml
