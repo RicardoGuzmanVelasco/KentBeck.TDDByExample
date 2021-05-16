@@ -2,7 +2,7 @@ using UnityEditor.UIElements;
 
 namespace Domain
 {
-    public class Money
+    public class Money : MoneyExpression
     {
         protected readonly int amount;
         
@@ -19,7 +19,7 @@ namespace Domain
         public static Money Dollar(int amount) => new Money(amount, "USD");
         public static Money Franc(int amount) => new Money(amount, "CHF");
 
-        public Money Plus(Money other)
+        public MoneyExpression Plus(Money other)
         {
             return new Money(amount + other.amount, Currency);
         }
