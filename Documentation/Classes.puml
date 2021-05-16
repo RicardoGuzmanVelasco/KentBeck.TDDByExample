@@ -3,6 +3,7 @@
 interface MoneyExpression
 {
     Reduce(Bank bank, string to) : Money
+    Plus(MoneyExpression addend) : MoneyExpression
 } 
 MoneyExpression ..> Bank
 
@@ -14,7 +15,6 @@ class Money <<ValueObject>>
     #Money(int amount, string currency)
     
     Times(int amount) : MoneyExpression
-    Plus(MoneyExpression addend) : SumExpression
     
     {static} Dollar(int amount) : Money
     {static} Franc(int amount) : Money
