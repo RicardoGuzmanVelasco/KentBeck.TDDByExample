@@ -11,6 +11,11 @@ namespace Domain
             Addend = addend;
         }
 
+        public MoneyExpression Plus(MoneyExpression addend)
+        {
+            return null;
+        }
+
         public Money Reduce(Bank bank, string to)
         {
             var amount = Augend.Reduce(bank, to).Amount +

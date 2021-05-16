@@ -9,14 +9,14 @@ namespace Domain.Tests
         public void MixedCurrency_Addition()
         {
             //Arrange
-            var dollars = Money.Dollar(5);
+            MoneyExpression dollars = Money.Dollar(5);
             var francs = Money.Franc(10);
             
             var sut = new Bank();
-            sut.AddRate(francs.Currency, dollars.Currency, 2);
+            sut.AddRate(francs.Currency, "USD", 2);
 
             //Act
-            var result = sut.Reduce(dollars.Plus(francs), dollars.Currency);
+            var result = sut.Reduce(dollars.Plus(francs), "USD");
 
             //Assert
             result.Should().Be(Money.Dollar(10));
@@ -27,7 +27,7 @@ namespace Domain.Tests
         {
             var sut = Money.Dollar(5);
             
-            var sum = sut.Plus(sut);
+            var sum = sut.Plus(sut) as SumExpression;
 
             sum.Augend.Should().Be(Money.Dollar(5));
             sum.Addend.Should().Be(Money.Dollar(5));

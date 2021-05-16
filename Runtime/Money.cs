@@ -11,9 +11,9 @@ namespace Domain
             Currency = currency;
         }
 
-        public Money Times(int multiplier) => new Money(Amount * multiplier, Currency);
+        public MoneyExpression Times(int multiplier) => new Money(Amount * multiplier, Currency);
         
-        public SumExpression Plus(Money addend) => new SumExpression(this, addend);
+        public MoneyExpression Plus(MoneyExpression addend) => new SumExpression(this, addend);
         
         public static Money Dollar(int amount) => new Money(amount, "USD");
         public static Money Franc(int amount) => new Money(amount, "CHF");
