@@ -29,12 +29,21 @@ class SumExpression
 }
 SumExpression --|> MoneyExpression
 
+class CurrencyPair <<ValueObject>>
+{
+    +fromCurrency : string
+    +toCurrency : string
+}
+
 class Bank
 {
+    -rates : Dictionary<CurrencyPair, int>
+
     Reduce(MoneyExpression source, string to) : Money
-    AddRate(string from, string to)
+    AddRate(string from, string to, int rate)
     Rate(string from, string to): int
 }
+Bank --> CurrencyPair
 Bank ..> MoneyExpression
 Bank --> Money
 @enduml
