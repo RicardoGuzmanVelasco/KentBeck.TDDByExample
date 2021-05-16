@@ -2,10 +2,10 @@ namespace Domain
 {
     public class SumExpression : MoneyExpression
     {
-        public Money Augend { get; }
-        public Money Addend { get; }
+        public MoneyExpression Augend { get; }
+        public MoneyExpression Addend { get; }
 
-        public SumExpression(Money augend, Money addend)
+        public SumExpression(MoneyExpression augend, MoneyExpression addend)
         {
             Augend = augend;
             Addend = addend;

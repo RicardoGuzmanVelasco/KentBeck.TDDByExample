@@ -24,12 +24,22 @@ namespace Domain
             return new Money(Amount / rate, to);
         }
 
+        #region Equality
         public override bool Equals(object o)
         {
             return o is Money other &&
                    Currency == other.Currency &&
                    Amount == other.Amount;
         }
+
+        public override int GetHashCode()
+        {
+            unchecked
+            {
+                return (Amount * 397) ^ (Currency != null ? Currency.GetHashCode() : 0);
+            }
+        }
+        #endregion
 
         public override string ToString() => $"{nameof(Amount)}: {Amount}, {nameof(Currency)}: {Currency}";
     }

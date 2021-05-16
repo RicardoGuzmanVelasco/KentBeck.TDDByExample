@@ -12,9 +12,12 @@ namespace Domain
         }
 
         #region Equality
-        protected bool Equals(CurrencyPair other) => fromCurrency == other.fromCurrency && toCurrency == other.toCurrency;
-
-        public override bool Equals(object other) => other is CurrencyPair o && Equals(o);
+        public override bool Equals(object o)
+        {
+            return o is CurrencyPair other &&
+                   fromCurrency == other.fromCurrency &&
+                   toCurrency == other.toCurrency;
+        }
 
         public override int GetHashCode()
         {
