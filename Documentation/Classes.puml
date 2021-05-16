@@ -3,7 +3,9 @@
 interface MoneyExpression
 {
     Reduce(Bank bank, string to) : Money
+    
     Plus(MoneyExpression addend) : MoneyExpression
+    Times(int multiplier) : MoneyExpression
 } 
 MoneyExpression ..> Bank
 
@@ -13,8 +15,6 @@ class Money <<ValueObject>>
     +Currency : string
     
     #Money(int amount, string currency)
-    
-    Times(int amount) : MoneyExpression
     
     {static} Dollar(int amount) : Money
     {static} Franc(int amount) : Money
@@ -40,6 +40,7 @@ class Bank
     -rates : Dictionary<CurrencyPair, int>
 
     Reduce(MoneyExpression source, string to) : Money
+    
     AddRate(string from, string to, int rate)
     Rate(string from, string to): int
 }
