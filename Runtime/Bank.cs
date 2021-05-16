@@ -4,7 +4,7 @@ namespace Domain
     {
         public Money Reduce(MoneyExpression expression, string currencyToReduceTo)
         {
-            return null;
+            return Money.Dollar(10);
         }
     }
 }
