@@ -2,8 +2,9 @@
 
 interface MoneyExpression
 {
-    Reduce(string to) : Money
+    Reduce(Bank bank, string to) : Money
 } 
+MoneyExpression ..> Bank
 
 class Money <<ValueObject>>
 {
@@ -31,7 +32,9 @@ SumExpression --|> MoneyExpression
 class Bank
 {
     Reduce(MoneyExpression source, string to) : Money
+    AddRate(string from, string to)
+    Rate(string from, string to): int
 }
-Bank --> MoneyExpression
+Bank ..> MoneyExpression
 Bank --> Money
 @enduml
