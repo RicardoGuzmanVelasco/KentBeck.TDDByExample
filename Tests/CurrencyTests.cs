@@ -9,11 +9,11 @@ namespace Domain.Tests
         [Test]
         public void Currency_Reduction()
         {
-            var sut = Money.Dollar(5);
-            var sum = sut.Plus(sut);
-            var bank = new Bank();
+            var money = Money.Dollar(5);
+            var sum = money.Plus(money);
+            var sut = new Bank();
 
-            var resultReduced = bank.Reduce(sum, "USD");
+            var resultReduced = sut.Reduce(sum, "USD");
 
             resultReduced.Should().Be(Money.Dollar(10));
         }
