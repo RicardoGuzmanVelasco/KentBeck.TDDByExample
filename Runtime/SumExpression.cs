@@ -11,10 +11,7 @@ namespace Domain
             Addend = addend;
         }
 
-        public MoneyExpression Plus(MoneyExpression addend)
-        {
-            return null;
-        }
+        public MoneyExpression Plus(MoneyExpression addend) => new SumExpression(this, addend);
 
         public Money Reduce(Bank bank, string to)
         {
