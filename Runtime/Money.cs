@@ -19,11 +19,8 @@ namespace Domain
         public static Money Dollar(int amount) => new Money(amount, "USD");
         public static Money Franc(int amount) => new Money(amount, "CHF");
 
-        public MoneyExpression Plus(Money addend)
-        {
-            return new Money(amount + addend.amount, Currency);
-        }
-        
+        public SumExpression Plus(Money addend) => new SumExpression(this, addend);
+
         public override bool Equals(object o)
         {
             return o is Money other &&
