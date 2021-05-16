@@ -22,10 +22,7 @@ namespace Domain
 
         public Money Reduce(Bank bank, string to)
         {
-            var rate = 1;
-            if(Currency is "CHF" && to is "USD")
-                rate = 2;
-            
+            var rate = bank.Rate(Currency, to);
             return new Money(Amount / rate, to);
         }
 
