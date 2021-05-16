@@ -7,6 +7,23 @@ namespace Domain.Tests
     public class CurrencyTests
     {
         [Test]
+        public void Sum_Times()
+        {
+            //Arrange
+            var dollars = Money.Dollar(5);
+            var francs = Money.Franc(10);
+
+            var sut = new Bank();
+            sut.AddRate("CHF", "USD", 2);
+            
+            //Act
+            var sum = new SumExpression(dollars, francs).Times(2);
+            var result = sut.Reduce(sum, "USD");
+
+            result.Should().Be(Money.Dollar(20));
+        }
+        
+        [Test]
         public void Sum_Plus()
         {
             //Arrange

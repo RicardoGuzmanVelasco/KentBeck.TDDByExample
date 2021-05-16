@@ -12,6 +12,7 @@ namespace Domain
         }
 
         public MoneyExpression Plus(MoneyExpression addend) => new SumExpression(this, addend);
+        public MoneyExpression Times(int multiplier) => new SumExpression(Augend.Times(multiplier), Addend.Times(multiplier));
 
         public Money Reduce(Bank bank, string to)
         {
@@ -19,5 +20,6 @@ namespace Domain
                          Addend.Reduce(bank, to).Amount;
             return new Money(amount, to);
         }
+
     }
 }
