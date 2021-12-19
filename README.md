@@ -29,3 +29,9 @@ This is how the example grows through each new paragraph in the chapter.
 ![](Documentation~/Classes(19a).png)  
 ![](Documentation~/Classes(19b).png)  
 ![](Documentation~/Classes(20).png)  
+
+## Patterns
+
+Third and last part of the book consists of a patterns catalog.  
+This patterns are split by chapters as the following cards do.
+![](Documentation~/Patterns.png)

@@ -1,0 +1,155 @@
+@startuml
+title Patterns\n
+center header Kent Beck | TDD by Example
+'''''''''''''
+allowmixing
+'''''''''''''
+
+class TestN <<(T, orchid) TDD pattern>>{
+    -How do you test your software?
+    +Write an automated test.
+    ---
+    +Tests are //Programmer Stone//,
+    transmuting fear into boredom.
+    They let you control how much
+    level of stress you choose.
+}
+
+class IsolatedTest <<(T, orchid) TDD pattern>>{
+    -How should the running
+    of test affect each other?
+    +Not at all.
+    ---
+    +Don't let one test broke early,
+    leaving the system for next tests
+    in an **unpredictable** state.
+    +Tests should be able to ignore
+    each other completely.
+    +Tests are **order independent**.
+    +Isolating tests encourages you
+    to compose solutions out of many
+    highly cohesive, loosely coupled
+    objects. 
+}
+
+class TestList <<(T, orchid) TDD pattern>>{
+    -What should you test?
+    +Before you begin, write a list
+    of all test you know you need.
+    ---
+    +Avoid stress never taking a step
+    forward unless you know where
+    your foot is going to land.
+    +**TFD** gets you away from green bar.
+}
+
+class TestFirst <<(T, orchid) TDD pattern>>{
+    -When should you write your tests?
+    +Before you write the code to be tested.
+    ---
+    +You **won't test after**.
+    +When we test first, we **reduce stress**,
+    which makes us more likely to test.
+}
+
+class AssetFirst <<(T, orchid) TDD pattern>>{
+    -When should you write asserts?
+    +Try writing them first.
+    ---
+    +Jim Newkirk introduced this.
+    +Even not thinking about the
+    implementation, when writing
+    tests you are **solving several**
+    **problems at once:**
+    +Where this functionality belongs?
+    What should the names be called?
+    How check the right answer?
+    What is the right answer?
+    What other tests this suggests?
+}
+
+class TestData <<(T, orchid) TDD pattern>>{
+    -What data do you use for test-first?
+    +Use data that makes the tests
+    easy to read and follow. 
+    ---
+    +You are writing test to an **audience**.
+    +If there is a difference in data,
+     it should be **meaningful**.
+    +If the **SUT** has to handle multiple inputs,
+    your test should reflect **multiple inputs**.
+    +Alternative is RealisticData.
+}
+
+class EvidentData <<(T, orchid) TDD pattern>>{
+    -How do you represent the intent of the data?
+    +Include expected and actual results in the
+    test itself, **try to remark their relationship**.
+    ---
+    +You'd like to leave as many clues as possible.
+    +Beneficial side effect: makes programming easier.
+    +This is an exception for **magic numbers smell**.
+    +Within the scope of a single method, relationship
+    between magic numbers may be obvious. If not, use
+    extract to symbolic constants, reusable to fixture.
+}
+
+'''''''''''''
+
+class OneStepTest <<(R, tomato) Red Bar pattern>>{
+    -Which test should you
+    pick next from the list?
+    +One that will teach you
+    something and that you're
+    confident you can implement.
+    ---
+    +Each test represents one
+    step towards overall goal.
+    +If don't find any test in
+    list that represents one-step,
+    add some new tests that
+    would represent progress
+    towards the items there.
+    +Neither **top-down** nor 
+    **bottom-up** really describes
+    TDD process helpfully.
+    **known-to-unknown** is a
+    helpful description. it
+    implies **we expect to learn**.        
+}
+
+class StarterTest <<(R, tomato) Red Bar pattern>>{
+    -Which test should you start with?
+    +Start by testing a variant of an
+    operation that doesn't do anything.
+    ---
+    +You can shorten red-green-refactor
+    loop choosing input/outputs that are
+    trivially easy to discover.        
+}
+
+class ExplanationTest <<(R, tomato) Red Bar pattern>>{
+    -How do you spread the use of testing?
+    +Ask and explain in testing terms.
+    ---
+    +Beware the enthusiasm of the newly
+    converted. Pushing TDD in people's faces
+    stop the stread of TDD like nothing else.        
+}
+
+class LearningTest <<(R, tomato) Red Bar pattern>>{
+    -When do you write tests for third-party code?
+    +**Before** the first time you will use it.
+    ---
+    +When noticing we're about to use a new method of
+    a new class of third-party code, write a little test
+    that verifies the API works as expected.
+    +This also forces us increase our API undestanding.
+    +When new releases of the package arrive, first the
+    tests should be passing (and fixed if necessary).
+    If learning tests didn't run, application wouldn't run.        
+}
+
+'''''''''''''
+right footer (CC-BY) RGV, 2022
+@enduml
