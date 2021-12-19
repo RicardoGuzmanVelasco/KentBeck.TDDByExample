@@ -131,8 +131,8 @@ namespace Domain.Tests
         [Test]
         public void Dollar_Franc_Inequality()
         {
-            Money sut1 = Money.Dollar(5);
-            Money sut2 = Money.Franc(5);
+            var sut1 = Money.Dollar(5);
+            var sut2 = Money.Franc(5);
 
             sut1.Should().NotBe(sut2);
         }
